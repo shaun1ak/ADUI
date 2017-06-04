@@ -1,0 +1,109 @@
+
+<h3> Cart <span class="glyphicon glyphicon-shopping-cart"></span></h3>
+<div class="row" id="cart-details" style="display:none">
+    <div class="well col-sm-8">
+        <p class="lead" ng-show="!cartItems || cartItems.length == 0">No items in your cart</p>
+        <div class="row list-top" ng-repeat="item in cartItems">
+            <div class="col-sm-4">
+                <img class="img-responsive" src="http://placehold.it/150x100" alt="">
+            </div>
+            <div class="col-sm-6">
+                <div class="caption-full">
+                    <!--<h4 class="pull-right">$24.99</h4>-->
+                    <h4>
+                        <a href="/product?id={{item.Id}}">{{item.Name}}</a>
+                    </h4>
+
+                    <p> Qty :
+                        <input type="number" id="spinEdit-{{item.Id}}" class="qty-input" ng-value="item.Qty" min="1"/>
+                    </p>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <button class="btn btn-danger btn-sm cart-delete" ng-click="deleteFromCart(item)"><span class="glyphicon glyphicon-trash"></span></button>
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="col-sm-3 pull-right panel panel-default">
+        <p class="lead" style="padding-top:3px">Quote Summary</p>
+        <p class="lead" ng-show="!cartItems || cartItems.length == 0">No items in your cart</p>
+        <hr />
+        <div class="panel-body" ng-show="cartItems && cartItems.length > 0">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th></th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in cartItems">
+                        <td>{{item.Name}}</td>
+                        <td>x</td>
+                        <td>{{item.Qty}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <button class="btn btn-info" type="button" id="confirm-order">
+        <i class="glyphicon glyphicon-chevron-right"></i> Confirm Quote
+    </button>
+    <br /><br /><br />
+    <div class="well col-md-8" id="confirm-form" >
+        <form>
+            <div class="form-group">
+                <label for="exampleInputName">Name</label>
+                <input type="text" class="form-control" id="exampleInputName" aria-describedby="emailHelp" placeholder="John Doe">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="you@example.com">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Phone no.</label>
+                <input type="text" class="form-control" id="exampleInputPhone" placeholder="9123456789">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputCompany">Company</label>
+                <input type="text" class="form-control" id="exampleInputCompany" aria-describedby="emailHelp" placeholder="ABC Pvt. Ltd.">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputAddress">Address</label>
+                <textarea class="form-control" id="exampleInputAddress" placeholder="123, Nariman Point"></textarea>
+            </div>
+            <div class="form-inline">
+                    <label for="exampleInputCity">City</label>
+                    <select class="form-control" id="exampleInputCity" ng-model="city" ng-options="city.name for city in cities | orderBy:'name'">
+                        <option value="">Choose City</option>
+                    </select>
+          
+                    <label for="exampleInputState">State</label>
+                    <select class="form-control form-horizontal" id="exampleInputState" ng-disabled="true" ng-model="state">
+                        <option value="">State</option>
+                    </select>
+
+            </div>
+           <br/>
+            <div class="form-group">
+                <button class="btn btn-info" type="button">
+                    <i class="glyphicon glyphicon-ok-sign"></i> Place Quote Inquiry
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <div class="well col-md-3 pull-right">
+        <p class="lead">Contact Us</p>
+    </div>
+</div>
+<div class="row">
+
+</div>

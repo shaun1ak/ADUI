@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>AD Portal</title>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/shop-item.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="col-sm-4 col-sm-push-4">
+        <h4>Login</h4>
+        <form name="loginForm" novalidate>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input ng-model="username" type="text" id="username" name="username" class="form-control" placeholder="Enter username" autofocus="true" autocomplete="off" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input ng-model="password" type="password" id="password" name="password" class="form-control" placeholder="Enter password" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary">Log In</button>
+            </div>
+        </form>
+    </div>
+    <!-- jQuery -->
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/bootstrap-spinedit.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angularroute.min.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <script src="scripts/ui-bootstrap-tpls-2.1.3.min.js"></script>
+</body>
+</html>

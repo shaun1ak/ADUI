@@ -1,0 +1,163 @@
+{
+  "Manufacturers": [
+    {
+      "Id": 1,
+      "Name": null,
+      "Description": "Desc - Mitutoyo                                                                                     ",
+      "Categories": [
+        {
+          "Id": 6,
+          "Name": "Dial Indicators",
+          "Description": "Desc - 15",
+          "ProductTypes": [
+            {
+              "Id": 1,
+              "Name": null,
+              "Description": "Desc - 0",
+              "Products": [
+                {
+                  "Id": 3914,
+                  "Name": "Dial Indicator",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": null,
+                  "Accuracy": null,
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                },
+                {
+                  "Id": 4029,
+                  "Name": "Dial Indicator",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": ".001\"",
+                  "Accuracy": "+/-.001\"",
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                },
+                {
+                  "Id": 4030,
+                  "Name": "Dial Indicator",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": ".001\"",
+                  "Accuracy": "+/-.001\"",
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                },
+                {
+                  "Id": 4031,
+                  "Name": "Dial Indicator",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": ".001\"",
+                  "Accuracy": "+/-.001\"",
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                },
+                {
+                  "Id": 4032,
+                  "Name": "Dial Indicator",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": ".001\"",
+                  "Accuracy": "+/-.001\"",
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": 11,
+          "Name": "Micrometers",
+          "Description": "Desc - 1",
+          "ProductTypes": [
+            {
+              "Id": 1,
+              "Name": null,
+              "Description": "Desc - 0",
+              "Products": [
+                {
+                  "Id": 4791,
+                  "Name": "Digit Outiside Micrometer Set",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": "0.01mm",
+                  "Accuracy": null,
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                },
+                {
+                  "Id": 4792,
+                  "Name": "Digit Outiside Micrometer set",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": null,
+                  "Accuracy": null,
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                }
+              ]
+            },
+            {
+              "Id": 2,
+              "Name": "High-Accuracy Digimatic Micrometer",
+              "Description": "Desc - 1",
+              "Products": [
+                {
+                  "Id": 4926,
+                  "Name": "Digimatic Micrometer (High-Accuracy)",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": "0.0001",
+                  "Accuracy": null,
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                },
+                {
+                  "Id": 4927,
+                  "Name": "Digimatic Micrometer (High-Accuracy)",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": "0.0001mm/0.000005\"",
+                  "Accuracy": null,
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                }
+              ]
+            },
+            {
+              "Id": 3,
+              "Name": "QuantuMike ",
+              "Description": "Desc - 2",
+              "Products": [
+                {
+                  "Id": 2125,
+                  "Name": "Coolant Proof Micrometer QuantuMike",
+                  "Description1": null,
+                  "Description2": null,
+                  "Resolution": "0.001mm",
+                  "Accuracy": "+/-0.001mm",
+                  "PageNo": null,
+                  "Make": "Japan                                                                                               ",
+                  "IsActive": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

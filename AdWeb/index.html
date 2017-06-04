@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>AD Portal</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/shop-item.css" rel="stylesheet">
+
+	<link rel="stylesheet"  href="css/bootstrap-spinedit.css">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<style>
+	
+	</style>
+</head>
+
+<body ng-app="shop" ng-controller="indexController">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#/">AD Portal</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#/about">About</a>
+                    </li>
+                    <li>
+                        <a href="#/products">Products</a>
+                    </li>
+                    <li>
+                        <a href="#/contact">Contact</a>
+                    </li>
+					
+                </ul>
+				<div class="sec-nav pull-right">
+						<button id="view-cart" class="btn btn-default" ng-click="viewCart()"><span class="glyphicon glyphicon-shopping-cart"></span> Cart <span class="badge">0</span></button>
+					
+						<button id="login" type="button" class="btn btn-info-outline" data-toggle="modal" data-target="#myModal">Login</button>
+						</div>
+					
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="modal-title" id="myModalLabel">Login</h3>
+                <br/>
+                    <a class="" href="#">New user? Register Here</a>
+                </div> <!-- /.modal-header -->
+                <div class="modal-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="uLogin" placeholder="Login">
+                                <label for="uLogin" class="input-group-addon glyphicon glyphicon-user"></label>
+                            </div>
+                        </div> <!-- /.form-group -->
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="uPassword" placeholder="Password">
+                                <label for="uPassword" class="input-group-addon glyphicon glyphicon-lock"></label>
+                            </div> <!-- /.input-group -->
+                        </div> <!-- /.form-group -->
+                        <div class="checkbox">
+                            <a>Forgot password?</a>
+                        <br/> <br/>
+                            <label>
+                                <input type="checkbox"> Remember me
+                            </label>
+                        </div> <!-- /.checkbox -->
+                        
+                    </form>
+                </div> <!-- /.modal-body -->
+                <div class="modal-footer">
+                    <button class="form-control btn btn-primary">Login</button>
+                
+                </div> <!-- /.modal-footer -->
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <!-- Page Content -->
+    <div class="container" >
+		<div class="row">
+			<div class="col-md-3">
+			    <p><img width="200" height="100" class="img-responsive" src="/img/200x50.jpg" alt=""> &nbsp;&nbsp;&nbsp; ASHWINKUMAR & CO.</p>
+			</div>
+            
+			<div id="custom-search-input" class="col-sm-8" ng-show="currentPath.indexOf('cart') == -1 && currentPath.indexOf('about') == -1 && currentPath.indexOf('contact') == -1">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="asyncSelected" 
+					uib-typeahead="item.Text for item in getCriteria($viewValue)" 
+					typeahead-loading="loadingLocations" 
+					typeahead-on-select="search($item)"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-info" type="button" ng-click="search()">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+					<!--<i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+					<div ng-show="noResults">
+					  <i class="glyphicon glyphicon-remove"></i> No Results Found
+					</div>-->
+                </div>
+            </div>
+			
+		</div>
+        
+    </div>
+    <!-- /.container -->
+	
+	<div class="container" ng-view>
+    </div>
+	
+    <div class="container">
+
+        <!--<hr>-->
+        <!-- Footer -->
+        <!--<footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Shaunak Deshpande 2016</p>
+                </div>
+            </div>
+        </footer>-->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="scripts/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="scripts/bootstrap.min.js"></script>
+	<script src="scripts/bootstrap-spinedit.js"></script>
+	<script src="scripts/angular.min.js"></script>
+	<script src="scripts/angularroute.min.js"></script>
+	<script src="scripts/angular-animate.js"></script>
+	<script src="scripts/ui-bootstrap-tpls-2.1.3.min.js"></script>
+	<script src="js/app.js"></script>
+</body>
+
+</html>

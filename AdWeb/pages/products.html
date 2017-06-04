@@ -1,0 +1,125 @@
+<div class="col-md-3 filter-container">
+
+    <p class="pull-left" style="font-weight:bold;font-size:16px">
+        Quick Search
+    </p>
+    <button type="button" class="btn btn-info btn-sm pull-right" ng-click="removeFilters()">
+        <span class="glyphicon glyphicon-remove"></span> Clear
+    </button>
+    <br/><br />
+    <!--<div class="list-group manufacturer">
+        <div class="list-group-item active">
+            <input type="checkbox" onchange="angular.element(this).scope().getCategories(true)" />
+            Manufacturer
+            <span class="collapse-filter pull-right glyphicon" ng-class="isManufacturerExpanded ? 'glyphicon-collapse-up' : 'glyphicon-collapse-down'" ng-click="isManufacturerExpanded = !isManufacturerExpanded"></span>
+        </div>
+        <div ng-show="isManufacturerExpanded">
+            <div ng-repeat="mfg in manufacturers" class="list-group-item"> 
+                <label>
+                    <input type="checkbox" data-id="{{mfg.Id}}" onchange="angular.element(this).scope().getCategories()" /> {{mfg.Name}}
+                </label>
+            </div>
+        </div>
+    </div>-->
+    <div class="list-group category-type">
+        <div class="list-group-item active">
+            <input ng-disabled="categoryTypes.length == 0" type="checkbox" onchange="angular.element(this).scope().getProductTypes(true)" />
+            <span>Category</span><span class="badge bluewhite">{{totalCategories}}</span>
+            <!--<span class="collapse-filter pull-right glyphicon" ng-class="categoryTypes.length > 0 && isCategoryExpanded ? 'glyphicon-collapse-up ' : 'glyphicon-collapse-down'" ng-click="isCategoryExpanded = !isCategoryExpanded"></span>-->
+        </div>
+        <!--<div class="type-child" ng-show="isCategoryExpanded">-->
+        <div class="type-child" ng-show="(categoryTypes.length > 0)">
+            <div ng-repeat="cat in categoryTypes" class="list-group-item">
+                <label>
+                    <input type="checkbox" data-id="{{cat.Id}}" onchange="angular.element(this).scope().getProductTypes()" />
+                    <span class="list-item-text">{{cat.Name}}</span>
+                </label>
+            </div>
+
+        </div>
+    </div>
+    <div class="list-group product-type">
+        <div class="list-group-item active">
+            <input ng-disabled="productTypes.length == 0" type="checkbox" onchange="angular.element(this).scope().setProductTypes(true)"/>
+            <span>Product Type </span><span class="badge bluewhite">0</span>
+            <!--<span class="collapse-filter pull-right glyphicon" ng-class="productTypes.length > 0 && isProductTypeExpanded ? 'glyphicon-collapse-up' : 'glyphicon-collapse-down'" ng-click="isProductTypeExpanded = !isProductTypeExpanded"></span>-->
+        </div>
+        <!--<div class="type-child" ng-show="isProductTypeExpanded && productTypes.length > 0">-->
+        <div class="type-child" ng-show="productTypes.length > 0">
+            <div ng-repeat="ptype in productTypes" class="list-group-item">
+                <label>
+                    <input type="checkbox" data-id="{{ptype.Id}}" onchange="angular.element(this).scope().setProductTypes()" />
+                    <span class="list-item-text">{{ptype.Name}}</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <button type="button" class="btn btn-primary btn-sm pull-left" ng-click="applyFilters()">
+        <span class="glyphicon glyphicon-check"></span> Search Products
+    </button>
+
+    <div>
+
+    </div>
+</div>
+<div class="col-md-9 product-container">
+    <div class="row">
+        
+        <div class="inner-container">
+            
+            <div class="col-md-12 list-top product-list" ng-repeat="product in products">
+                <div class="thumbnail">
+                    <div class="product-image col-sm-4">
+                        <img class="img-responsive" ng-src="/img/Photos_200_150/{{product.ProductCode}}.png" alt="" onerror="this.onerror = null; this.src = '/img/200x150.png';">
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="caption-full">
+                            <h4 class="pull-right" ng-if="false">$24.99</h4>
+                            <h4>
+                                <a href="/#/product/{{product.Id}}">{{product.Name}}</a>
+                            </h4>
+                            <p ng-if="product.Description1 !=null">
+                                {{product.Description1}}
+                            </p>
+                            <p>
+                                <span>Resolution : {{product.Resolution}}</span><br/>
+                                <span>Range : {{product.Range}}</span>                                
+                            </p>
+
+                            <p><a href="/product?id={{product.Id}}">More Details</a></p>
+                            <p>
+                                <input type="number" id="spinEdit-{{product.Id}}" class="qty-input" value="1" min="1"/>
+                                <button type="button" class="btn btn-info btn-sm" ng-click="addToCart(product)">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span> Add to cart
+                                </button>
+                            </p>
+                        </div>
+                        <p class="pull-right" ng-if="false">3 reviews</p>
+                        <p ng-if="false">
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star-empty"></span>
+                            4.0 stars
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="col-md-12 col-md-offset-4 pagination-container">
+                <button id="shiftLeft" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <ul class="pagination"></ul>
+                <button id="shiftRight" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+            </div>
+            <div class="col-md-12 col-md-offset-5 no-records">
+                No records found
+            </div>
+            
+            <div class="col-md-9 col-md-offset-10">
+                <button id="scrollTop" style="display:none" class="btn btn-default"><span class="glyphicon glyphicon-menu-up"></span> Go to Top</button>
+            </div>
+        </div>
+    </div>
+</div>

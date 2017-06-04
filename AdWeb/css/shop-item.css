@@ -1,0 +1,277 @@
+/*!
+ * Start Bootstrap - Shop Item HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+
+
+
+.thumbnail img {
+    width: 100%;
+}
+
+.ratings {
+    padding-right: 10px;
+    padding-left: 10px;
+    color: #d17581;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+    color: #333;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+.navbar-header a{
+		font-weight : bold;
+	}
+	.list-top{
+		margin-top:2%;
+	}
+	.product-image.col-sm-4{
+		padding-top : 10px;
+	}
+	.sec-nav button{
+		margin-top: 12px;
+	}
+
+#custom-search-input{
+    padding: 3px;
+    border: solid 1px #E4E4E4;
+    border-radius: 6px;
+    background-color: #fff;
+	margin:5px;
+}
+
+#custom-search-input input{
+	
+	font-size : 14px;
+	height : 32px;
+    border: 0;
+    box-shadow: none;
+}
+
+#custom-search-input button{
+    margin: 2px 0 0 0;
+    background: none;
+    box-shadow: none;
+    border: 0;
+    color: #666666;
+    padding: 0 8px 0 10px;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input button:hover{
+    border: 0;
+    box-shadow: none;
+    border-left: solid 1px #ccc;
+}
+
+#custom-search-input .glyphicon-search,.glyphicon-refresh{
+    font-size: 23px;
+}
+
+.product-container{
+	border : 1px solid #dff0d8;
+	border-radius : 3px;
+}
+.container .row {
+    margin: 5px;
+}
+
+.filter-container{
+	margin-top : 10px;
+	border-right : 1px solid #dff0d8;
+	border-radius : 2px;
+	display:block;
+	height : 500px;
+}
+
+.top-product-container, .top-discount-product-container, .about-container{
+    margin-top : 15px;
+	border : 1px solid #dff0d8;
+	border-radius : 3px;
+}
+
+#viewProducts{
+	color : #337ab7;
+	font-weight : bold;
+}
+
+.collapse-filter{
+    color : black;
+}
+.collapse-filter:hover{
+    cursor : pointer;
+    color : white;
+}
+
+.list-group-item label{
+    cursor:pointer;
+}
+
+.top-discount-product-container .discount-box{
+     border : 1px thick grey;
+     background-color : cornflowerblue;
+     color: white;
+     padding : 2px;
+     font-size :small;
+}
+.list-group.category-type .type-child{
+    height: 130px;
+    overflow-y: scroll;
+}
+.list-group.product-type .type-child{
+    height: 200px;
+    overflow-y: scroll;
+}
+.type-child .list-item-text{
+    margin-left:8px;
+}
+
+.list-group-item:not(.active) {
+    padding : 3px 7px;
+    font-size : 12px;
+}
+.list-group-item.active {
+    font-weight:bold;
+    padding : 5px 7px;
+    font-size : 13px;
+}
+
+.badge.bluewhite{
+    color: #337ab7;
+    background-color : white;
+}
+
+.pagination-container, .no-records{
+    display: none;
+}
+
+.inner-container{
+    
+height: 600px;
+}
+
+.loader { 
+    /*display : none;*/
+    position : absolute;
+    z-index : 999;
+    top : 0;
+    margin: auto; /* presto! */
+    width: 95%; 
+    height: 40%; 
+    overflow: visible; 
+    background: white url('../img/loading.gif') no-repeat center center; 
+
+}
+.cart-loader { 
+    /*display : none;*/
+    position : absolute;
+    z-index : 999;
+    top : 0;
+    left: 15px;
+    width: 100%; 
+    height: 80%; 
+    overflow: visible; 
+    background: white url('../img/loading.gif') no-repeat center center; 
+
+}
+
+.modal-dialog {
+    width: 350px;
+}
+.modal-footer {
+    height: 70px;
+    margin: 0;
+}
+.modal-footer .btn {
+    font-weight: bold;
+}
+.modal-footer .progress {
+    display: none;
+    height: 32px;
+    margin: 0;
+}
+.input-group-addon {
+    color: #fff;
+    background: #3276B1;
+}
+.qty-input{
+    width: 65px;
+}
+
+.cart-delete{
+    margin: 30px;
+}
+
+.carousel-caption {
+    bottom : 0px;
+    padding-bottom : 0px;
+}
+.navbar-inverse .navbar-brand {
+    color:white;
+}
+.navbar-inverse .navbar-nav>li>a{
+    color:white
+}
+.navbar-inverse .navbar-nav>li>a:hover{
+    text-decoration : underline;
+}
+.carousel img {
+  width: auto;
+  height: 315px;
+  max-height: 315px;
+}
+.contact.well {
+    background-color : white
+}
+table.about td {
+    padding : 3px;
+}
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 1px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}

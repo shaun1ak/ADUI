@@ -1,7 +1,8 @@
 var app = angular.module('shop', ['ngRoute','ngAnimate', 'ui.bootstrap']);
 app.controller('indexController', function($scope,$location,$http,$window) {
-    var url = 'http://localhost:49859/';
+    //var url = 'http://localhost:54901/';
     //var url = 'http://localhost:4567/';
+    var url = 'http://localhost:8080/';    
     sessionStorage.setItem('url', url);
     $scope.currentPath = $location.path();
 	$scope.searchType = {
@@ -132,8 +133,9 @@ app.controller('homeController', function($scope,$location,$http,$window) {
     $scope.pageNo = 0;
 
     $scope.getPopularProducts = function(pageNo){
-        $http.get(sessionStorage.getItem('url') + 'api/search/GetPopularProducts?pageNo='+pageNo+'&pageSize=5').then(function (response) {
-            $scope.totalPages = response.data.TotalRecords;
+        //$http.get(sessionStorage.getItem('url') + 'api/search/GetPopularProducts?pageNo='+pageNo+'&pageSize=5').then(function (response) {
+        $http.get(sessionStorage.getItem('url') + 'json/JSON/GetPopularProducts.json?pageNo='+pageNo+'&pageSize=5').then(function (response) {
+                $scope.totalPages = response.data.TotalRecords;
             $scope.popularProducts = response.data.Rows.slice(0,5);
         
         });
@@ -146,13 +148,13 @@ app.controller('homeController', function($scope,$location,$http,$window) {
     var slides = $scope.slides = [];
     var currIndex = 0;
     var catArr = [
-        { image: '/img/slider/1_Flash.jpg' },
-        { image: '/img/slider/2_Flash.jpg' },
-        { image: '/img/slider/3_Flash_Caliper.jpg' },
-        { image: '/img/slider/3_Flash_Micrometer.jpeg' },
-        { image: '/img/slider/4_Flash_Dial.jpg' },
-        { image: '/img/slider/5_Flash_Gauge_Blocks.jpg' },
-        { image: '/img/slider/6_Flash_SJ-210.png' }
+        { image: 'img/slider/1_Flash.jpg' },
+        { image: 'img/slider/2_Flash.jpg' },
+        { image: 'img/slider/3_Flash_Caliper.jpg' },
+        { image: 'img/slider/3_Flash_Micrometer.jpeg' },
+        { image: 'img/slider/4_Flash_Dial.jpg' },
+        { image: 'img/slider/5_Flash_Gauge_Blocks.jpg' },
+        { image: 'img/slider/6_Flash_SJ-210.png' }
     ];
     $scope.addSlide = function() {
         var newWidth = 600 + slides.length + 1;
@@ -268,12 +270,20 @@ app.controller('productsController', function ($scope, $location, $http, $window
     };
     init();
     function init() {
-        $http.get(sessionStorage.getItem('url') + 'api/search/GetSearchOptions').then(function (response) {
+//      $http.get(sessionStorage.getItem('url') + 'api/search/GetSearchOptions').then(function (response) {
+        $http.get(sessionStorage.getItem('url') + 'json/JSON/GetSearchOptions.json').then(function (response) {            
             $scope.manufacturers = response.data.Manufacturers;
             for (i = 0; i < $scope.manufacturers.length; i++) {
                 $scope.categoryTypes = $scope.categoryTypes.concat($scope.manufacturers[i].Categories);
             }
             $scope.isCategoryExpanded = true;
+            var input = {
+                search: {},
+                sortBy: null,
+                pageNo: 1,
+            }
+            $scope.currentSearchInput = input;
+            getSearchData(input,true);
         });
         $('#shiftLeft').click(function () {
             var $ul = $('ul.pagination');
@@ -508,7 +518,8 @@ app.controller('productsController', function ($scope, $location, $http, $window
         window.scrollTo(0, 0);
         var pageSize = 10;
         $('.product-list').hide();
-        $http.post(sessionStorage.getItem('url') + "api/search/GetSearchResultByOptions", input).then(function (response) {
+        //$http.post(sessionStorage.getItem('url') + "api/search/GetSearchResultByOptions", input).then(function (response) {
+        $http.get(sessionStorage.getItem('url') + "json/JSON/GetSearchResultsByOption.json", input).then(function (response) {
             
             $scope.products = response.data.Rows;
             if (response.data.Rows && response.data.Rows.length) {
@@ -535,6 +546,8 @@ app.controller('productsController', function ($scope, $location, $http, $window
             }
         });
     }
+
+
     //get Call
     /*$http.get("welcome.htm").then(function (response) {
         $scope.myWelcome = response.data;

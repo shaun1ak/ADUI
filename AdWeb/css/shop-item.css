@@ -30,7 +30,17 @@ body {
 }
 
 footer {
-    margin: 50px 0;
+    margin: 40px 0 0;
+    background-color: #222;
+}
+footer p{
+    padding: 20px 0;
+    margin: 0;
+    color: #ffffff;
+}
+.row-no-margin{
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 .navbar-header a{
@@ -40,7 +50,7 @@ footer {
 		margin-top:2%;
 	}
 	.product-image.col-sm-4{
-		padding-top : 10px;
+		padding : 10px;
 	}
 	.sec-nav button{
 		margin-top: 12px;
@@ -89,7 +99,12 @@ footer {
 .container .row {
     margin: 5px;
 }
-
+.margin-20{
+    margin: 20px;
+}
+.float-left{
+    float: left;
+}
 .filter-container{
 	margin-top : 10px;
 	border-right : 1px solid #dff0d8;

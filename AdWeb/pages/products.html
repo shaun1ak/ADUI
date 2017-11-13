@@ -69,9 +69,9 @@
         <div class="inner-container">
             
             <div class="col-md-12 list-top product-list" ng-repeat="product in products">
-                <div class="thumbnail">
+                <div class="thumbnail row">
                     <div class="product-image col-sm-4">
-                        <img class="img-responsive" ng-src="/img/Photos_200_150/{{product.ProductCode}}.png" alt="" onerror="this.onerror = null; this.src = '/img/200x150.png';">
+                        <img class="img-responsive" ng-src="img/Photos_200_150/{{product.ProductCode}}.jpg" alt="" onerror="this.onerror = null; this.src = '/img/200x150.png';">
                     </div>
                     <div class="col-sm-6">
                         <div class="caption-full">
@@ -108,16 +108,16 @@
                 </div>
             </div>
             <hr/>
-            <div class="col-md-12 col-md-offset-4 pagination-container">
-                <button id="shiftLeft" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span></button>
-                <ul class="pagination"></ul>
-                <button id="shiftRight" class="btn btn-default"><span class="glyphicon glyphicon-chevron-right"></span></button>
+            <div class="col-md-8 col-md-offset-4 pagination-container">
+                <button id="shiftLeft" class="btn btn-default float-left margin-20"><span class="glyphicon glyphicon-chevron-left"></span></button>
+                <ul class="pagination float-left"></ul>
+                <button id="shiftRight" class="btn btn-default float-left margin-20"><span class="glyphicon glyphicon-chevron-right"></span></button>
             </div>
-            <div class="col-md-12 col-md-offset-5 no-records">
+            <div class="col-md-7 col-md-offset-5 no-records">
                 No records found
             </div>
             
-            <div class="col-md-9 col-md-offset-10">
+            <div class="col-md-2 col-md-offset-10">
                 <button id="scrollTop" style="display:none" class="btn btn-default"><span class="glyphicon glyphicon-menu-up"></span> Go to Top</button>
             </div>
         </div>

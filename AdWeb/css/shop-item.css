@@ -7,11 +7,15 @@
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
-
-
+.navbar-inverse {
+    background-color: #446CB3;
+    border-color: #446CB3;
+}
 
 .thumbnail img {
     width: 100%;
+    width: 200px;
+    height: 150px;
 }
 
 .ratings {
@@ -61,7 +65,8 @@ footer p{
     border: solid 1px #E4E4E4;
     border-radius: 6px;
     background-color: #fff;
-	margin:5px;
+    margin:5px;
+    margin-top: 30px;
 }
 
 #custom-search-input input{
@@ -97,7 +102,11 @@ footer p{
 	border-radius : 3px;
 }
 .container .row {
-    margin: 5px;
+    margin: 0px;
+    padding: 5px 10px;
+}
+.cl-popprods{
+    border-bottom: #dff0d8 1px solid;
 }
 .margin-20{
     margin: 20px;
@@ -265,9 +274,13 @@ table.about td {
     padding-left: 1px;
 }
 
-.col-xs-5ths {
+.col-xs-5ths { 
     width: 20%;
     float: left;
+}
+footer{
+    background-color: #446CB3;
+    border-color: #446CB3; 
 }
 
 @media (min-width: 768px) {
@@ -282,6 +295,10 @@ table.about td {
         width: 20%;
         float: left;
     }
+}
+.carousel-indicators li{
+    background-color: gray;
+    border: gray solid 1px;
 }
 
 @media (min-width: 1200px) {
